@@ -1,7 +1,8 @@
 from pymongo import MongoClient, collection
 import random
 
-client = MongoClient('mongodb+srv://admin:admin@cluster0.1eosr.mongodb.net/retryWrites=true&w=majority')
+credentials = open('credentials.txt').readlines()
+client = MongoClient(credentials[2])
 db = client.dev
 
 def add_user(user_id):
